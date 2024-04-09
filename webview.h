@@ -1730,6 +1730,9 @@ public:
     WebKitSettings *settings =
         webkit_web_view_get_settings(WEBKIT_WEB_VIEW(m_webview));
     webkit_settings_set_javascript_can_access_clipboard(settings, true);
+    webkit_settings_set_allow_file_access_from_file_urls(settings, true);
+    webkit_settings_set_allow_universal_access_from_file_urls(settings, true);
+    webkit_settings_set_disable_web_security(settings, true);
     if (debug) {
       webkit_settings_set_enable_write_console_messages_to_stdout(settings,
                                                                   true);
